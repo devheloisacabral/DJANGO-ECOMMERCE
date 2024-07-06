@@ -3,7 +3,7 @@ from distutils.command.upload import upload
 
 class Category(models.Model):
     title=models.CharField(max_length=180)
-    image=models.ImageField(upload_to='imgs/')
+    image=models.ImageField(upload_to='products/')
 
     def __str__(self):
         return self.title
