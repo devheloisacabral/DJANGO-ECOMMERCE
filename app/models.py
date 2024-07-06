@@ -39,6 +39,12 @@ class Product(models.Model):
     size=models.ForeignKey(Size, on_delete=models.CASCADE)
     color=models.ForeignKey(Color, on_delete=models.CASCADE)
     status=models.BooleanField(default=True)
+    fav=models.BooleanField(default=False)
+
+    def is_fav(self):
+        if self.fav==True:
+            self.status=False
+        return Product
 
     def __str__(self):
         return self.title

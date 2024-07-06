@@ -3,7 +3,8 @@ from .models import *
 
 
 def home(request):
-    return render(request,'index.html')
+    favs = Product.objects.filter(fav=True).order_by('-id')
+    return render(request,'index.html', {'favs':favs})
 
 def categories(request):
     data=Category.objects.all().order_by('-id')
